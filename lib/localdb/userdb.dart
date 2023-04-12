@@ -37,6 +37,29 @@ class Address {
 
 @embedded
 class Geolocation {
-  double? lat;
-  double? long;
+  String? lat;
+  String? long;
+}
+
+// save list of object<Users> in isar db
+
+Future<void> saveUsers(List<UserLocal> users) async {
+  final isar = await Isar.open([UserLocalSchema]);
+
+  isar.writeTxn(() async {
+    for (final user in users) {
+      isar.userLocals.put(user);
+    }
+    print("save users successfully");
+  });
+}
+
+// retrieve list of object from isar db
+
+Future<List<UserLocal>> getUsersFromDatabase() async {
+  final isar = await Isar.open([UserLocalSchema]);
+
+  final users = await isar.userLocals.where().findAll();
+
+  return users;
 }

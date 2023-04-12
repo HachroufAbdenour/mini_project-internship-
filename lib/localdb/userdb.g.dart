@@ -2281,8 +2281,8 @@ void _geolocationSerialize(
   List<int> offsets,
   Map<Type, List<int>> allOffsets,
 ) {
-  writer.writeDouble(offsets[0], object.lat);
-  writer.writeDouble(offsets[1], object.long);
+  writer.writeString(offsets[0], object.lat);
+  writer.writeString(offsets[1], object.long);
 }
 
 Geolocation _geolocationDeserialize(
@@ -2292,8 +2292,8 @@ Geolocation _geolocationDeserialize(
   Map<Type, List<int>> allOffsets,
 ) {
   final object = Geolocation();
-  object.lat = reader.readDoubleOrNull(offsets[0]);
-  object.long = reader.readDoubleOrNull(offsets[1]);
+  object.lat = reader.readStringOrNull(offsets[0]);
+  object.long = reader.readStringOrNull(offsets[1]);
   return object;
 }
 

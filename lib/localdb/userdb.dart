@@ -46,6 +46,8 @@ class Geolocation {
 Future<void> saveUsers(List<UserLocal> users) async {
   final isar = await Isar.open([UserLocalSchema]);
 
+  print("of course get incrance from isar db ");
+
   isar.writeTxn(() async {
     for (final user in users) {
       isar.userLocals.put(user);

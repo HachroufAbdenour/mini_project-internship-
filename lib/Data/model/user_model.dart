@@ -6,15 +6,15 @@ import 'address_model.dart';
 import 'name_model.dart';
 
 class User {
-  final int? id;
+  late final int? id;
   final Address? address;
-  final String? email;
-  final String? username;
-  final String? password;
-  final String? phone;
+  late final String? email;
+  late final String? username;
+  late final String? password;
+  late final String? phone;
   final int? v;
 
-  final Name? name;
+  late final Name? name;
 
   User({
     this.id,

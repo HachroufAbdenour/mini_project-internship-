@@ -6,12 +6,9 @@ import 'package:mini_projet/Data/web_services/web_services.dart';
 import 'package:mini_projet/constant/constant.dart';
 
 import 'Data/Repository/repository.dart';
-import 'db/user.dart';
 import 'ui/screen/Home_Screen.dart';
 
-void main() async {
-  final isar = await Isar.open([UserSchema]);
-
+void main() {
   runApp(const MyApp());
 }
 

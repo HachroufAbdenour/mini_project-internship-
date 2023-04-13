@@ -1,13 +1,10 @@
-class Name {
+class Namee {
   final String? firstname;
   final String? lastname;
 
-  Name({
-    required this.firstname,
-    required this.lastname,
-  });
+  Namee({this.firstname, this.lastname});
 
-  Name.fromJson(Map<String, dynamic> json)
+  Namee.fromJson(Map<String, dynamic> json)
       : firstname = json['firstname'],
         lastname = json['lastname'];
 

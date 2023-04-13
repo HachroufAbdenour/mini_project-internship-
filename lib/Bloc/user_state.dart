@@ -24,12 +24,15 @@ class UserLoadedState extends UserState {
   List<Object?> get props => [users];
 }
 
-// Data error  loading state
+//  Data error  loading state )
+// after
+// getting data from local storage
 
 class UserErrorState extends UserState {
-  UserErrorState(this.error);
-  String error;
+  UserErrorState(this.usersdb);
+
+  final List<User> usersdb;
 
   @override
-  List<Object?> get props => [];
+  List<Object?> get props => [usersdb];
 }

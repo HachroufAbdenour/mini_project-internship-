@@ -10,13 +10,16 @@ class UserBloc extends Bloc<UserEvent, UserState> {
   UserBloc(this._repository) : super(UserLoadingState()) {
     on<LoadUserEvent>((event, emit) async {
       emit(UserLoadingState());
+
       try {
         final users = await _repository.getUsers();
         emit(UserLoadedState(users));
-      } catch (e) {
-        emit(UserErrorState(e.toString()));
+      } catch (error) {
+        print('Error while loading users from API: $error');
+
+        final userdb = await _repository.getUsersFromDb();
+        emit(UserErrorState(userdb));
       }
-      ;
     });
   }
 }

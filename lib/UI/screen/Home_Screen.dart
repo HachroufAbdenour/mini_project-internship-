@@ -135,7 +135,9 @@ class _HomeScreenState extends State<HomeScreen> {
         if (state is UserLoadingState) {
           return showLoadingIndicator();
         }
+
         // just test where erroe is existe  ''print("data is Before");
+
         if (state is UserLoadedState) {
 // just test where erroe is existe   print("data is loaded from server");
 // hna ndir condition ask (is searching) use-->  userlist or (non  searching ) use -->listserched
@@ -145,7 +147,8 @@ class _HomeScreenState extends State<HomeScreen> {
         }
 
         if (state is UserErrorState) {
-          return showError();
+          allUsers = state.usersdb;
+          return buildloadedListWidget();
         }
 
         return showOtherCase();
@@ -154,6 +157,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
 //--2- widget <show loading error>
+// fi cas one ki ykon error yrje3 widget represent error
 
   Widget showError() {
     return Center(

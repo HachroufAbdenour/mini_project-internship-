@@ -39,12 +39,10 @@ dependencies:
   flutter_bloc: ^8.1.2
   equatable: ^2.0.5
   url_launcher: ^6.1.10
-  geolocator: ^9.0.2
-  geocoding: ^2.1.0
-  sqflite: ^2.2.6
 
   isar: ^3.0.5
   isar_flutter_libs: ^3.0.5
+  google_maps_flutter: ^2.2.5
 
 
 dev_dependencies:

@@ -1,9 +1,23 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.mini_projet">
+
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+
+
+
+
    <application
+
         android:label="mini_projet"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
+   
+      <meta-data android:name="com.google.android.geo.API_KEY"
+               android:value="AIzaSyCkM7KRmg6vU38RTjFbmg0SQK83L_QOIag"/>
+
+
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -46,7 +60,7 @@
   </intent>
 </queries>
 
-<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+
 
 
 </manifest>

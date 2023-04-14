@@ -1,11 +1,5 @@
-import 'dart:async';
-
-import 'package:sqflite/sqflite.dart';
-import 'package:path/path.dart';
-
 import 'address_model.dart';
 import 'name_model.dart';
-
 import '../../localdb/userdb.dart';
 
 class User {
@@ -80,7 +74,7 @@ UserLocal convertUserToUserLocal(User user) {
     ..email = user.email
     ..username = user.username
     ..password = user.password
-    ..name = name as Name?
+    ..name = name
     ..address = address
     ..phone = user.phone;
 }

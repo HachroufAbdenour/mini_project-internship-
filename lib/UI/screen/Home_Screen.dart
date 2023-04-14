@@ -12,7 +12,7 @@ import 'User_Details_Sceen.dart';
 import 'package:mini_projet/constant/constant.dart';
 
 class HomeScreen extends StatefulWidget {
-  HomeScreen({Key? key}) : super(key: key);
+  const HomeScreen({Key? key}) : super(key: key);
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -29,12 +29,12 @@ class _HomeScreenState extends State<HomeScreen> {
     return TextField(
       controller: _searchTextController,
       cursorColor: Colors.white,
-      decoration: InputDecoration(
+      decoration: const InputDecoration(
         hintText: 'Find a user ..........................',
         border: InputBorder.none,
         hintStyle: TextStyle(color: MyColors.myGrey, fontSize: 18),
       ),
-      style: TextStyle(color: Colors.white, fontSize: 18),
+      style: const TextStyle(color: Colors.white, fontSize: 18),
       onChanged: (seachedUsers) {
         addSearchedForItemsToSearchedList(seachedUsers);
       },
@@ -57,7 +57,7 @@ class _HomeScreenState extends State<HomeScreen> {
     if (_isSearching) {
       return [
         IconButton(
-          icon: Icon(
+          icon: const Icon(
             Icons.clear,
             color: MyColors.myGrey,
           ),
@@ -70,7 +70,7 @@ class _HomeScreenState extends State<HomeScreen> {
     } else {
       return [
         IconButton(
-          icon: Icon(
+          icon: const Icon(
             Icons.search,
             color: MyColors.myGrey,
           ),
@@ -109,7 +109,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
 //****************************************
   Widget _buildAppBarTitle() {
-    return Text(
+    return const Text(
       "Users",
       style: TextStyle(color: MyColors.myGrey),
     );
@@ -122,7 +122,7 @@ class _HomeScreenState extends State<HomeScreen> {
 //--1- widget <show loading Indicator>
 
   Widget showLoadingIndicator() {
-    return Center(
+    return const Center(
       child: CircularProgressIndicator(),
     );
   }
@@ -160,7 +160,7 @@ class _HomeScreenState extends State<HomeScreen> {
 // fi cas one ki ykon error yrje3 widget represent error
 
   Widget showError() {
-    return Center(
+    return const Center(
       child: Text(
         "Erorr",
         style: TextStyle(
@@ -194,9 +194,11 @@ class _HomeScreenState extends State<HomeScreen> {
               onTap: () {
                 Navigator.of(context).push(MaterialPageRoute(
                     builder: (context) => UserDetailsScreen(
-                        e: _isSearching
-                            ? searchedForUsers[index]
-                            : allUsers[index])));
+                          e: _isSearching
+                              ? searchedForUsers[index]
+                              : allUsers[index],
+                          context: context,
+                        )));
               },
               child: Card(
                 color: MyColors.kSecondaryColor,

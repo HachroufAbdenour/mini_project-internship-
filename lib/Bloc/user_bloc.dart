@@ -1,4 +1,6 @@
 // ignore: depend_on_referenced_packages
+// ignore_for_file: avoid_print
+
 import 'package:bloc/bloc.dart';
 import 'package:mini_projet/bloc/user_event.dart';
 import 'package:mini_projet/bloc/user_state.dart';

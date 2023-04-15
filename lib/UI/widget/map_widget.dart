@@ -21,7 +21,7 @@ class _MapsWidgetState extends State<MapsWidget> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Maps Widget'),
+        title: const Text('address'),
       ),
       body: Stack(
         children: [

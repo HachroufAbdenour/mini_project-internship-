@@ -1,4 +1,3 @@
-import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -9,7 +8,6 @@ import '../../Data/Repository/repository.dart';
 import '../../Data/model/user_model.dart';
 import '../../constant/colors.dart';
 import 'User_Details_Sceen.dart';
-import 'package:mini_projet/constant/constant.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -20,7 +18,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   late List<User> allUsers;
-  late List<User> searchedForUsers;
+  late List<User> searchedForUsers = [];
   bool _isSearching = false;
   final _searchTextController = TextEditingController();
 

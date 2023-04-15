@@ -52,7 +52,8 @@ class UserDetailsScreen extends StatelessWidget {
                         style: const TextStyle(
                             fontSize: 25,
                             fontStyle: FontStyle.italic,
-                            fontWeight: FontWeight.bold)),
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white)),
                   ],
                 ),
               ],

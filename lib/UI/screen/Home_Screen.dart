@@ -169,14 +169,12 @@ class _HomeScreenState extends State<HomeScreen> {
 
 //--- widget <show  Other Case>
   Widget showOtherCase() {
-    return Container(
-      child: const Center(
-          child: Text(
-        "Nothing",
-        style: TextStyle(
-            fontSize: 44, color: Colors.amber, backgroundColor: Colors.brown),
-      )),
-    );
+    return const Center(
+        child: Text(
+      "Nothing",
+      style: TextStyle(
+          fontSize: 44, color: Colors.amber, backgroundColor: Colors.brown),
+    ));
   }
 
 // widget loaded data successfully

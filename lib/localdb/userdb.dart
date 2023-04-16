@@ -73,8 +73,8 @@ Future<List<UserLocal>> getUsersFromDatabase() async {
 
 User convertUserLocalToUser(UserLocal userLocal) {
   final name = Name()
-    ..firstname = userLocal.name!.firstname
-    ..lastname = userLocal.name!.lastname ?? '';
+    ..firstname = userLocal.name?.firstname
+    ..lastname = userLocal.name?.lastname;
 
   final geolocation = Geolocation()
     ..lat = userLocal.address!.geolocation!.lat
@@ -82,10 +82,10 @@ User convertUserLocalToUser(UserLocal userLocal) {
 
   final address = Address()
     ..geolocation = geolocation
-    ..city = userLocal.address!.city ?? ''
-    ..street = userLocal.address!.street ?? ''
+    ..city = userLocal.address!.city
+    ..street = userLocal.address!.street
     ..number = userLocal.address!.number
-    ..zipcode = userLocal.address!.zipcode ?? '';
+    ..zipcode = userLocal.address!.zipcode;
 
   return User(
     id: userLocal.id,

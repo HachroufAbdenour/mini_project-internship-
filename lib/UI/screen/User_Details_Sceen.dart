@@ -166,7 +166,7 @@ class UserDetailsScreen extends StatelessWidget {
                         if (await canLaunchUrl(url)) {
                           await launchUrl(url);
                         } else {
-                          print("can't lanchuer this url");
+                          //   print("can't lanchuer this url");
                         }
                       },
                       child: const Text("Call"),

@@ -1,7 +1,7 @@
 import 'geolocation_model.dart';
 
 class Addresss {
-  final Geolocation? geolocation;
+  final Geolocationn? geolocation;
   final String? city;
   final String? street;
   final int? number;
@@ -17,7 +17,7 @@ class Addresss {
 
   Addresss.fromJson(Map<String, dynamic> json)
       : geolocation = (json['geolocation'] as Map<String, dynamic>?) != null
-            ? Geolocation.fromJson(json['geolocation'] as Map<String, dynamic>)
+            ? Geolocationn.fromJson(json['geolocation'] as Map<String, dynamic>)
             : null,
         city = json['city'] as String?,
         street = json['street'] as String?,

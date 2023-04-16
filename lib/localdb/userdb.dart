@@ -1,4 +1,7 @@
 import 'package:isar/isar.dart';
+import 'package:mini_projet/Data/model/address_model.dart';
+import 'package:mini_projet/Data/model/geolocation_model.dart';
+import '../Data/model/name_model.dart';
 import '../Data/model/user_model.dart';
 
 //generate file to get inctance automaicly
@@ -72,30 +75,28 @@ Future<List<UserLocal>> getUsersFromDatabase() async {
 // _____B_______ Method to convert Userlocal object  To User  object
 
 User convertUserLocalToUser(UserLocal userLocal) {
-  final name = Name()
-    ..firstname = userLocal.name?.firstname
-    ..lastname = userLocal.name?.lastname;
+  final name = Namee(
+      firstname: userLocal.name!.firstname, lastname: userLocal.name!.lastname);
 
-  final geolocation = Geolocation()
-    ..lat = userLocal.address!.geolocation!.lat
-    ..long = userLocal.address!.geolocation!.long;
+  final geolocation = Geolocationn(
+      lat: userLocal.address!.geolocation!.lat,
+      long: userLocal.address!.geolocation!.long);
 
-  final address = Address()
-    ..geolocation = geolocation
-    ..city = userLocal.address!.city
-    ..street = userLocal.address!.street
-    ..number = userLocal.address!.number
-    ..zipcode = userLocal.address!.zipcode;
+  final address = Addresss(
+    geolocation: geolocation,
+    city: userLocal.address!.city,
+    number: userLocal.address!.number,
+    street: userLocal.address!.street,
+    zipcode: userLocal.address!.street,
+  );
 
   return User(
     id: userLocal.id,
     email: userLocal.email,
     username: userLocal.username,
     password: userLocal.password,
-
-    // name: name,
-    // address: address,
-
+    name: name,
+    address: address,
     phone: userLocal.phone,
   );
 }

@@ -1,14 +1,14 @@
-class Geolocation {
+class Geolocationn {
   final String? lat;
   final String? long;
 
-  Geolocation({
+  Geolocationn({
     this.lat,
     this.long,
   });
 
-  factory Geolocation.fromJson(Map<String, dynamic> json) {
-    return Geolocation(lat: json['lat'], long: json['long']);
+  factory Geolocationn.fromJson(Map<String, dynamic> json) {
+    return Geolocationn(lat: json['lat'], long: json['long']);
   }
 
 /* autre method de deserialization "convert json format to object"
